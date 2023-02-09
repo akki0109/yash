@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('unit test') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Continue ?'){
+            input{
+                message "should we continue ?"
+                ok "yes we should"
+            }
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('stage') {
+            steps {
+                sh 'date'
+                sh 'cal 2023'
+            }
+        }
+        stage('prod') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
+        }
+        failure {
+            echo 'good you failed it'
+        }
+        success{
+            echo 'you succeded'
+        
+        }
+    }
+}
