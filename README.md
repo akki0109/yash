@@ -1,2 +1,0 @@
-# yash
-# JAI HO
