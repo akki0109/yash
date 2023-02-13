@@ -4,6 +4,6 @@ RUN apt install apache2 -y
 RUN service apache2 start
 WORKDIR /var/www/html
 COPY index.html .
-
+RUN service apache2 start
 
 
