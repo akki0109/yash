@@ -7,6 +7,6 @@ RUN service apache2 start
 EXPOSE 80
 WORKDIR /var/www/html
 COPY index.html .
-
+CMD [“apache2ctl”, “-D”, “FOREGROUND”]
 
 
