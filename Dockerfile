@@ -1,8 +1,8 @@
-FROM ubuntu
-RUN apt update
-RUN apt install apache2 -y
-RUN service apache2 start
-RUN service apache2 status
+FROM centos
+RUN yum update
+RUN yum install httpd -y
+RUN service httpd start
+RUN service httpd status
 WORKDIR /var/www/html
 EXPOSE 4000
 COPY . .
