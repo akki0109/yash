@@ -6,6 +6,6 @@ RUN apt-get clean
 EXPOSE 80
 WORKDIR /var/www/html
 COPY index.html .
-CMD [“apache2ctl”, “-D”, “FOREGROUND”]
+CMD [“service”, “apache2”, “start”]
 
 
