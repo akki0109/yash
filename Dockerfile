@@ -1,8 +1,7 @@
-FROM ubuntu:20.04 as base
+FROM ubuntu:18.04
 RUN apt update
 RUN apt install apache2 -y
 RUN service apache2 start
-RUN service apache2 status
 WORKDIR /var/www/html
 EXPOSE 4000
 COPY . .
