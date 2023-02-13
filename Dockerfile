@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:latest
 RUN apt update
 RUN apt install apache2 -y
 RUN service apache2 status
