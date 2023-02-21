@@ -1,0 +1,7 @@
+imageName=akki:${BUILD_NUMBER}
+containerName=akki
+
+sudo docker system prune -af
+sudo docker build -t $imageName .
+sudo docker stop $containerName || true && sudo docker rm -f $containerName || true
+sudo docker run -p 81:80 -d --name $containerName $imageName
